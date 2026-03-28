@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>    
+<title>Samir Gomaa</title>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">Af</div>
+
+  <div class="nav-center">
+    <a href="index.html" class="active">Home</a>
+    <a href="photos.html">Photos</a>
+    <a href="videos.html">Videos</a>
+  </div>
+
+  <a href="#" class="contact-btn">Contact Us</a>
+
+
+    <img  class="burger" onclick="openMenu()" src="icons/burger.svg" alt="">
+
+</div>
+</nav>
+<div class="mobile-menu" id="menu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+  <h1 class="nav-title">Samir Gomaa</h1>
+  <div class="mobile-nav">
+    <a href="#" id="active-brgr">Home</a>
+    <a href="#">Photos</a>
+    <a href="#">Videos</a>
+  </div>
+  <div class="socials">
+   
+        
+        <a id="phoneno" href="tel:+20 112-188-8893">
+            <img class="sicon" src="icons/phone_number.svg" alt="">
+        </a>
+        <a href="https://www.instagram.com/samirgomaaweddingplanner?igsh=dmQzejNhcm92Z3Vz">
+            <img class="sicon" src="icons/instagram.svg" alt="">
+        </a>
+        <a href="https://www.facebook.com/samirgomaawedingplanner">
+            <img class="sicon" src="icons/facebook.svg" alt="">
+        </a>
+
+  </div>
+
+</div>
+
+<section class="hero">
+  
+  <div class="reveal">
+    <h1 class="hero-title">Samir Gomaa</h1>
+  </div>
+
+  <div class="reveal">
+    <p class="hero-subtitle">The art of modern wedding design</p>
+  </div>
+
+  <div class="reveal image-wrap">
+    <img src="images/test1.jpg" class="hero-image"></img>
+  </div>
+  <div class="gradienthero">
+
+  </div>
+
+</section>
+
+<section>
+    <h1 class="abouttitle">About Us</h1>
+    <p class="aboutp">
+        Lorem ipsum dolor sit amet consectetur. Id ultricies turpis pretium eu sollicitudin ac consequat. Vulputate ipsum ipsum morbi integer venenatis. Pretium risus vitae at ut blandit tortor in ultricies dui. Turpis viverra hendrerit pellentesque risus curabitur accumsan odio.
+    </p>
+    <section class="stats">
+  <div class="stat">
+    <p class="label">Clients</p>
+    <h2 class="number" data-target="200">0+</h2>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="stat">
+    <p class="label">Years</p>
+    <h2 class="number" data-target="10">0+</h2>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="stat">
+    <p class="label">Weddings</p>
+    <h2 class="number" data-target="100">0+</h2>
+  </div>
+</section>
+</section>
+
+
+<script>
+  function openMenu() {
+    document.getElementById("menu").classList.add("active");
+  }
+
+  function closeMenu() {
+    document.getElementById("menu").classList.remove("active");
+  }
+</script>
+<script>
+  const tl = gsap.timeline();
+
+  tl.to(".hero-title", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power3.out",
+    from: { y: 40 }
+  })
+
+  .to(".hero-subtitle", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power3.out",
+    from: { y: 30 }
+  }, "-=0.6")
+
+  .to(".hero-image", {
+    opacity: 1,
+    scale: 1,
+    duration: 1.2,
+    ease: "power3.out"
+  }, "-=0.6");
+</script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Fade + slide up animation
+  gsap.from(".stat", {
+    scrollTrigger: {
+      trigger: ".stats",
+      start: "top 80%",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power3.out"
+  });
+
+  // Counter animation
+  const numbers = document.querySelectorAll(".number");
+
+  numbers.forEach(num => {
+    let target = +num.getAttribute("data-target");
+
+    gsap.fromTo(num,
+      { innerText: 0 },
+      {
+        innerText: target,
+        duration: 2,
+        ease: "power1.out",
+        snap: { innerText: 1 },
+        scrollTrigger: {
+          trigger: ".stats",
+          start: "top 80%",
+        },
+        onUpdate: function () {
+          num.innerText = Math.floor(num.innerText) + "+";
+        }
+      }
+    );
+  });
+</script>
+</body>
+
+</html>
