@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<title>Samir Gomaa</title>
+</head>
+<body>
+
+
+
+  
+<nav class="navbar">
+  <div class="logo">Af</div>
+
+  <div class="nav-center">
+    <a href="index.html" class="active">Home</a>
+    <a href="photos.html">Photos</a>
+    <a href="videos.html">Videos</a>
+  </div>
+
+  <a href="#" class="contact-btn">Contact Us</a>
+
+
+    <img  class="burger" onclick="openMenu()" src="icons/burger.svg" alt="">
+
+</div>
+</nav>
+<div class="mobile-menu" id="menu">
+  <div class="close-btn" onclick="closeMenu()">✕</div>
+  <h1 class="nav-title">Samir Gomaa</h1>
+  <div class="mobile-nav">
+    <a href="#" id="active-brgr">Home</a>
+    <a href="#">Photos</a>
+    <a href="#">Videos</a>
+  </div>
+  <div class="socials">
+   
+        
+        <a id="phoneno" href="tel:+20 112-188-8893">
+            <img class="sicon" src="icons/phone_number.svg" alt="">
+        </a>
+        <a href="https://www.instagram.com/samirgomaaweddingplanner?igsh=dmQzejNhcm92Z3Vz">
+            <img class="sicon" src="icons/instagram.svg" alt="">
+        </a>
+        <a href="https://www.facebook.com/samirgomaawedingplanner">
+            <img class="sicon" src="icons/facebook.svg" alt="">
+        </a>
+
+  </div>
+
+</div>
+
+<section class="hero">
+  
+  <div class="reveal">
+    <h1 class="hero-title">Samir Gomaa</h1>
+  </div>
+
+  <div class="reveal">
+    <p class="hero-subtitle">The art of modern wedding design</p>
+  </div>
+
+  <div class="reveal image-wrap">
+    <img src="images/hero1.jpg" class="hero-image"></img>
+  </div>
+  <div class="gradienthero">
+
+  </div>
+
+</section>
+
+<section>
+    <h1 class="abouttitle">About Us</h1>
+    <p class="aboutp">
+With over 10 years of experience in crafting unforgettable weddings, Samir Gomaa brings passion, creativity, and precision to every celebration. From intimate gatherings to grand affairs, Samir is dedicated to turning your vision into a flawless reality.    </p>
+    <div class="stats">
+  <div class="stat">
+    <p class="label">Clients</p>
+    <h3 class="number" data-target="200">0+</h3>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="stat">
+    <p class="label">Years</p>
+    <h3 class="number" data-target="10">0+</h3>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="stat">
+    <p class="label">Weddings</p>
+    <h3 class="number" data-target="100">0+</h3>
+  </div>
+</div>
+
+</section>
+<section class="photosec">
+
+  <h1 class="phototitle">Timeless Moments</h1>
+    <p class="photop">
+      Preserving memories that last a lifetime    
+    </p>
+<div class="photocont">
+    <div class="mask mask1">
+      <img src="images/slider1.jpg">
+    </div>
+
+    <div class="mask mask2">
+      <img src="images/slider2.jpg">
+    </div>
+
+    <div class="mask mask3">
+      <img src="images/slider3.jpg">
+    </div>
+  </div>
+</section>
+<section class="cinematic-section">
+  <div class="content-wrapper">
+    <h2 class="ctitle">Cinematic Moments</h2>
+    <p class="csubtitle">Relive your love story through every moving frame</p>
+    
+    <div class="video-container">
+      <video src="video/mainvid1.mp4" class="video-placeholder" muted autoplay></video>
+    </div>
+  </div>
+</section>
+
+<footer>
+<div class="footercont"></div>
+<div class="footerbox">  
+  <div class="navfooter">
+    <h2>Pages</h2>
+    <a href="index.html" class="active">Home</a>
+    <a href="photos.html">Photos</a>
+    <a href="videos.html">Videos</a>
+  </div>
+  <div class="logofooter">Af</div>
+
+
+</div>
+<div class="socialsfooter">
+   
+        
+        <a id="phoneno" href="tel:+20 112-188-8893">
+            <img class="sicon" src="icons/phone_number.svg" alt="">
+        </a>
+        <a href="https://www.instagram.com/samirgomaaweddingplanner?igsh=dmQzejNhcm92Z3Vz">
+            <img class="sicon" src="icons/instagram.svg" alt="">
+        </a>
+        <a href="https://www.facebook.com/samirgomaawedingplanner">
+            <img class="sicon" src="icons/facebook.svg" alt="">
+        </a>
+
+  </div>
+</footer>
+
+<script>
+
+
+
+  function openMenu() {
+    document.getElementById("menu").classList.add("active");
+  }
+
+  function closeMenu() {
+    document.getElementById("menu").classList.remove("active");
+  }
+</script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Fade + slide up animation
+  gsap.from(".stat", {
+    scrollTrigger: {
+      trigger: ".stats",
+      start: "top 80%",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power3.out"
+  });
+
+  // Counter animation
+  const numbers = document.querySelectorAll(".number");
+
+  numbers.forEach(num => {
+    let target = +num.getAttribute("data-target");
+
+    gsap.fromTo(num,
+      { innerText: 0 },
+      {
+        innerText: target,
+        duration: 2,
+        ease: "power1.out",
+        snap: { innerText: 1 },
+        scrollTrigger: {
+          trigger: ".stats",
+          start: "top 80%",
+        },
+        onUpdate: function () {
+          num.innerText = Math.floor(num.innerText) + "+";
+        }
+      }
+    );
+  });
+</script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".photosec",
+    start: "4% top",
+    end: "+=300%",
+    scrub: true,
+    pin: true,
+  }
+});
+
+// 1 → hide first
+tl.to(".mask1", {
+  clipPath: "inset(0% 0% 100% 0%)",
+  duration: 1
+})
+
+// 2 → show second
+.to(".mask2", {
+  clipPath: "inset(0% 0% 0% 0%)",
+  duration: 1
+}, "-=0.7")
+
+// 2 → hide second
+.to(".mask2", {
+  clipPath: "inset(0% 0% 100% 0%)",
+  duration: 1
+})
+
+// 3 → show third
+.to(".mask3", {
+  clipPath: "inset(0% 0% 0% 0%)",
+  duration: 1
+}, "-=0.7");
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+const tl1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".cinematic-section",
+    start: "center bottom",   // When the top of the section hits the center of screen
+    end: "center 70%",  // Finish when the section center hits screen center
+    scrub: true,           // Links animation to scroll distance
+  } 
+});
+
+tl1.to(".cinematic-section", {
+  backgroundColor: "#1D1D1D",
+  duration: 1
+})
+.to(".ctitle, .csubtitle", {
+  color: "#FFFBF6", // Ensure text stays visible or changes style
+  duration: 1
+}, "<"); // "<" makes it start at the same time as the background change
+
+
+</script>
+
+</body>
+
+</html>
