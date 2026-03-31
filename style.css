@@ -899,7 +899,7 @@ margin: 50px auto;
    @media (max-width: 400px) {
 .photocont {
   width: 85%;
-  height: 60vh;
+  height: 50vh;
   margin: 30px auto;
   position: relative;
 }
@@ -943,7 +943,7 @@ width: 80vw ;
 }
 .hero-image{
     width: 80%;
-    height: 60vh;
+    height: 50vh;
     object-fit: cover;
     margin: 30px auto;
     align-items: center;
