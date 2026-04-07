@@ -236,7 +236,7 @@ function renderAlbums() {
     div.className = "album";
 
     div.innerHTML = `
-<video src="${album.videos[0]}" muted autoplay></video>
+<video src="${album.videos[0]}" preload muted autoplay></video>
       <h3>${album.title}</h3>
     `;
 
