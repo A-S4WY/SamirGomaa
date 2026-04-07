@@ -267,7 +267,7 @@ function openAlbum(index) {
     vid.src = video;
     vid.muted = true;
     vid.autoplay = true;
-
+    vid.preload = true;
     div.appendChild(vid);
 
     div.onclick = () => openVideo(video);
